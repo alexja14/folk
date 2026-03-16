@@ -305,8 +305,9 @@ nav a:hover { color: var(--white); }
 }
 
 /* ---- REVEAL ANIMATION ---- */
-.reveal { opacity: 0; transform: translateY(36px); transition: opacity 0.8s ease, transform 0.8s ease; }
-.reveal.visible { opacity: 1; transform: translateY(0); }
+/* Only hide when JS is confirmed running — content always visible without JS */
+.js-on .reveal { opacity: 0; transform: translateY(36px); transition: opacity 0.85s cubic-bezier(0.25,1,0.5,1), transform 0.85s cubic-bezier(0.25,1,0.5,1); }
+.js-on .reveal.visible { opacity: 1; transform: translateY(0); }
 
 /* ---- INTRO ---- */
 .intro { padding: 100px 0; background: var(--light); }
