@@ -1,0 +1,47 @@
+/* Bellissimo Animations */
+
+/* 1. Scroll Reveal Items */
+.bellissimo-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.bellissimo-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 2. Primary Buttons Pulse & Hover */
+.elementor-button {
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    animation: bellissimo-pulse 3s infinite;
+}
+.elementor-button:hover {
+    transform: scale(1.05) translateY(-3px) !important;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2) !important;
+    animation: none; /* stop pulse on hover */
+}
+@keyframes bellissimo-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 165, 0, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(255, 165, 0, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 165, 0, 0); }
+}
+
+/* 3. Cards Hover Tilt/Scale */
+.bellissimo-card {
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease !important;
+    border-radius: 8px; /* Smooth edges */
+}
+.bellissimo-card:hover {
+    transform: translateY(-10px) scale(1.02) !important;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15) !important;
+    z-index: 10;
+}
+
+/* 4. Enhanced Images */
+.elementor-widget-image img {
+    transition: transform 0.5s ease;
+}
+.elementor-widget-image:hover img {
+    transform: scale(1.03);
+}
